@@ -1,0 +1,367 @@
+// Zac Cendejas & Noelle Rosa
+// 12/14/2016
+
+#include "gfxnew.h"
+#include "background.h"
+
+Background::Background(){
+}
+Background::~Background(){
+}
+void Background::drawBackground(){//The drawBackground functions takes the points for the mountains and the snow atop the mountains and employs the gfx_line function as well as the gfx_fill_polygon function to draw the initial background
+	//Purplish color for the mountain lines
+	gfx_color(MountainR, MountainG, MountainB);
+	gfx_line(Mnt1LX, Mnt1LY, Mnt1TX, Mnt1TY);
+	gfx_line(Mnt1TX, Mnt1TY, Mnt1RX, Mnt1RY);
+	gfx_line(Mnt2LX, Mnt2LY, Mnt2TX, Mnt2TY);
+	gfx_line(Mnt2TX, Mnt2TY, Mnt2RX, Mnt2RY);
+	gfx_line(Mnt3LX, Mnt3LY, Mnt3TX, Mnt3TY);
+	gfx_line(Mnt3TX, Mnt3TY, Mnt3RX, Mnt3RY);
+	gfx_line(Mnt4LX, Mnt4LY, Mnt4TX, Mnt4TY);
+	gfx_line(Mnt4TX, Mnt4TY, Mnt4RX, Mnt4RY);
+	gfx_line(Mnt5LX, Mnt5LY, Mnt5TX, Mnt5TY);
+	gfx_line(Mnt5TX, Mnt5TY, Mnt5RX, Mnt5RY);
+	gfx_line(Mnt6LX, Mnt6LY, Mnt6TX, Mnt6TY);
+	gfx_line(Mnt6TX, Mnt6TY, Mnt6RX, Mnt6RY);
+	gfx_line(Mnt7LX, Mnt7LY, Mnt7TX, Mnt7TY);
+	gfx_line(Mnt7TX, Mnt7TY, Mnt7RX, Mnt7RY);
+	gfx_line(Mnt8LX, Mnt8LY, Mnt8TX, Mnt8TY);
+	gfx_line(Mnt8TX, Mnt8TY, Mnt8RX, Mnt8RY);
+
+	//The second round of mountains
+	gfx_line(Mnt11LX, Mnt11LY, Mnt11TX, Mnt11TY);
+	gfx_line(Mnt11TX, Mnt11TY, Mnt11RX, Mnt11RY);
+	gfx_line(Mnt21LX, Mnt21LY, Mnt21TX, Mnt21TY);
+	gfx_line(Mnt21TX, Mnt21TY, Mnt21RX, Mnt21RY);
+	gfx_line(Mnt31LX, Mnt31LY, Mnt31TX, Mnt31TY);
+	gfx_line(Mnt31TX, Mnt31TY, Mnt31RX, Mnt31RY);
+	gfx_line(Mnt41LX, Mnt41LY, Mnt41TX, Mnt41TY);
+	gfx_line(Mnt41TX, Mnt41TY, Mnt41RX, Mnt41RY);
+	gfx_line(Mnt51LX, Mnt51LY, Mnt51TX, Mnt51TY);
+	gfx_line(Mnt51TX, Mnt51TY, Mnt51RX, Mnt51RY);
+	gfx_line(Mnt61LX, Mnt61LY, Mnt61TX, Mnt61TY);
+	gfx_line(Mnt61TX, Mnt61TY, Mnt61RX, Mnt61RY);
+	gfx_line(Mnt71LX, Mnt71LY, Mnt71TX, Mnt71TY);
+	gfx_line(Mnt71TX, Mnt71TY, Mnt71RX, Mnt71RY);
+	gfx_line(Mnt81LX, Mnt81LY, Mnt81TX, Mnt81TY);
+	gfx_line(Mnt81TX, Mnt81TY, Mnt81RX, Mnt81RY);
+
+	//Changes color to white to draw the snow
+	gfx_color(SnowR, SnowG, SnowB);
+	gfx_fill_polygon(mypts1, sz1);
+	gfx_fill_polygon(mypts2, sz2);
+	gfx_fill_polygon(mypts3, sz3);
+	gfx_fill_polygon(mypts4, sz4);
+	gfx_fill_polygon(mypts5, sz5);
+	gfx_fill_polygon(mypts6, sz6);
+	gfx_fill_polygon(mypts7, sz7);
+	gfx_fill_polygon(mypts8, sz8);
+	gfx_fill_polygon(mypts11, sz11);
+	gfx_fill_polygon(mypts21, sz21);
+	gfx_fill_polygon(mypts31, sz31);
+	gfx_fill_polygon(mypts41, sz41);
+	gfx_fill_polygon(mypts51, sz51);
+	gfx_fill_polygon(mypts61, sz61);
+	gfx_fill_polygon(mypts71, sz71);
+	gfx_fill_polygon(mypts81, sz81);
+	gfx_flush();
+}
+void Background::moveBackground(){//The background moves to the left pixel by pixel by moving every single point (including each point used in the XPoint arrays used to draw the snow)
+	Mnt1RX--;
+	Mnt1TX--;
+	Mnt1LX--;
+	Mnt2RX--;
+	Mnt2TX--;
+	Mnt2LX--;
+	Mnt3RX--;
+	Mnt3TX--;
+	Mnt3LX--;
+	Mnt4RX--;
+	Mnt4TX--;
+	Mnt4LX--;
+	Mnt5RX--;
+	Mnt5TX--;
+	Mnt5LX--;
+	Mnt6RX--;
+	Mnt6TX--;
+	Mnt6LX--;
+	Mnt7RX--;
+	Mnt7TX--;
+	Mnt7LX--;
+	Mnt8RX--;
+	Mnt8TX--;
+	Mnt8LX--;
+
+	//second window of mountans
+	Mnt11RX--;
+	Mnt11TX--;
+	Mnt11LX--;
+	Mnt21RX--;
+	Mnt21TX--;
+	Mnt21LX--;
+	Mnt31RX--;
+	Mnt31TX--;
+	Mnt31LX--;
+	Mnt41RX--;
+	Mnt41TX--;
+	Mnt41LX--;
+	Mnt51RX--;
+	Mnt51TX--;
+	Mnt51LX--;
+	Mnt61RX--;
+	Mnt61TX--;
+	Mnt61LX--;
+	Mnt71RX--;
+	Mnt71TX--;
+	Mnt71LX--;
+	Mnt81RX--;
+	Mnt81TX--;
+	Mnt81LX--;
+
+	//All of the x values in the mypts arrays that are used to create the snow are shifted... The y values stay the same
+	mypts1[0].x--;
+	mypts1[1].x--;
+	mypts1[2].x--;
+	mypts1[3].x--;
+	mypts1[4].x--;
+	mypts1[5].x--;
+	mypts2[0].x--;
+	mypts2[1].x--;
+	mypts2[2].x--;
+	mypts2[3].x--;
+	mypts2[4].x--;
+	mypts2[5].x--;
+	mypts3[0].x--;
+	mypts3[1].x--;
+	mypts3[2].x--;
+	mypts3[3].x--;
+	mypts3[4].x--;
+	mypts3[5].x--;
+	mypts4[0].x--;
+	mypts4[1].x--;
+	mypts4[2].x--;
+	mypts4[3].x--;
+	mypts4[4].x--;
+	mypts5[0].x--;
+	mypts5[1].x--;
+	mypts5[2].x--;
+	mypts5[3].x--;
+	mypts5[4].x--;
+	mypts6[0].x--;
+	mypts6[1].x--;
+	mypts6[2].x--;
+	mypts6[3].x--;
+	mypts6[4].x--;
+	mypts6[5].x--;
+	mypts7[0].x--;
+	mypts7[1].x--;
+	mypts7[2].x--;
+	mypts7[3].x--;
+	mypts7[4].x--;
+	mypts7[5].x--;
+	mypts8[0].x--;
+	mypts8[1].x--;
+	mypts8[2].x--;
+	mypts8[3].x--;
+	mypts8[4].x--;
+	mypts8[5].x--;
+
+	//All the points for the second window of points
+	mypts11[0].x--;
+	mypts11[1].x--;
+	mypts11[2].x--;
+	mypts11[3].x--;
+	mypts11[4].x--;
+	mypts11[5].x--;
+	mypts21[0].x--;
+	mypts21[1].x--;
+	mypts21[2].x--;
+	mypts21[3].x--;
+	mypts21[4].x--;
+	mypts21[5].x--;
+	mypts31[0].x--;
+	mypts31[1].x--;
+	mypts31[2].x--;
+	mypts31[3].x--;
+	mypts31[4].x--;
+	mypts31[5].x--;
+	mypts41[0].x--;
+	mypts41[1].x--;
+	mypts41[2].x--;
+	mypts41[3].x--;
+	mypts41[4].x--;
+	mypts51[0].x--;
+	mypts51[1].x--;
+	mypts51[2].x--;
+	mypts51[3].x--;
+	mypts51[4].x--;
+	mypts61[0].x--;
+	mypts61[1].x--;
+	mypts61[2].x--;
+	mypts61[3].x--;
+	mypts61[4].x--;
+	mypts61[5].x--;
+	mypts71[0].x--;
+	mypts71[1].x--;
+	mypts71[2].x--;
+	mypts71[3].x--;
+	mypts71[4].x--;
+	mypts71[5].x--;
+	mypts81[0].x--;
+	mypts81[1].x--;
+	mypts81[2].x--;
+	mypts81[3].x--;
+	mypts81[4].x--;
+	mypts81[5].x--;
+
+}
+void Background::resetBackground(){//When the resetBackground function is called, all the variables are set back equal to what they were initialized as at the very beginning of the game 
+	Mnt1LX = 400;
+	Mnt1TX = 600;
+	Mnt1RX = 800;
+	Mnt2LX = 760;
+	Mnt2TX = 880;
+	Mnt2RX = 1000;
+	Mnt3LX = 680;
+	Mnt3TX = 720;
+	Mnt3RX = 820;
+	Mnt4LX = 1000;
+	Mnt4TX = 1160;
+	Mnt4RX = 1320;
+	Mnt5LX = 940;
+	Mnt5TX = 972;
+	Mnt5RX = 1040;
+	Mnt6LX = 400;
+	Mnt6TX = 300;
+	Mnt6RX = 200;
+	Mnt7LX = 320;
+	Mnt7TX = 400;
+	Mnt7RX = 480;
+	Mnt8LX = 200;
+	Mnt8TX = 20;
+	Mnt8RX = -20;
+
+	//Second set of mountains
+	Mnt11LX = 1600;
+	Mnt11TX = 1800;
+	Mnt11RX = 2000;
+	Mnt21LX = 1960;
+	Mnt21TX = 2080;
+	Mnt21RX = 2200;
+	Mnt31LX = 1880;
+	Mnt31TX = 1920;
+	Mnt31RX = 2020;
+	Mnt41LX = 2200;
+	Mnt41TX = 2360;
+	Mnt41RX = 2520;
+	Mnt51LX = 2140;
+	Mnt51TX = 2172;
+	Mnt51RX = 2240;
+	Mnt61LX = 1600;
+	Mnt61TX = 1500;
+	Mnt61RX = 1400;
+	Mnt71LX = 1520;
+	Mnt71TX = 1600;
+	Mnt71RX = 1680;
+	Mnt81LX = 1400;
+	Mnt81TX = 1220;
+	Mnt81RX = 1180;
+	//X Variables used to draw snow
+	mypts1[0].x = 557;
+	mypts1[1].x = 600;
+	mypts1[2].x = 658;
+	mypts1[3].x = 610;
+	mypts1[4].x = 575;
+	mypts1[5].x = 557;
+	mypts2[0].x = 835;
+	mypts2[1].x = 880;
+	mypts2[2].x = 905;
+	mypts2[3].x = 900;
+	mypts2[4].x = 860;
+	mypts2[5].x = 835;
+	mypts3[0].x = 700;
+	mypts3[1].x = 720;
+	mypts3[2].x = 765;
+	mypts3[3].x = 750;
+	mypts3[4].x = 710;
+	mypts3[5].x = 700;
+	mypts4[0].x = 1100;
+	mypts4[1].x = 1160;
+	mypts4[2].x = 1200;
+	mypts4[3].x = 1270;
+	mypts4[4].x = 1100;
+	mypts5[0].x = 950;
+	mypts5[1].x = 972;
+	mypts5[2].x = 1021;
+	mypts5[3].x = 964;
+	mypts5[4].x = 950;
+	mypts6[0].x = 222;
+	mypts6[1].x = 300;
+	mypts6[2].x = 352;
+	mypts6[3].x = 325;
+	mypts6[4].x = 290;
+	mypts6[5].x = 222;
+	mypts7[0].x = 345;
+	mypts7[1].x = 400;
+	mypts7[2].x = 450;
+	mypts7[3].x = 430;
+	mypts7[4].x = 375;
+	mypts7[5].x = 345;
+	mypts8[0].x = 142;
+	mypts8[1].x = 20;
+	mypts8[2].x = 0;
+	mypts8[3].x = 0;
+	mypts8[4].x = 35;
+	mypts8[5].x = 142;
+
+	//X variables used to draw snow on seconf set of mountains
+	mypts11[0].x = 1757;
+	mypts11[1].x = 1800;
+	mypts11[2].x = 1858;
+	mypts11[3].x = 1810;
+	mypts11[4].x = 1775;
+	mypts11[5].x = 1757;
+	mypts21[0].x = 2035;
+	mypts21[1].x = 2080;
+	mypts21[2].x = 2105;
+	mypts21[3].x = 2100;
+	mypts21[4].x = 2060;
+	mypts21[5].x = 2035;
+	mypts31[0].x = 1900;
+	mypts31[1].x = 1920;
+	mypts31[2].x = 1965;
+	mypts31[3].x = 1950;
+	mypts31[4].x = 1910;
+	mypts31[5].x = 1900;
+	mypts41[0].x = 2300;
+	mypts41[1].x = 2360;
+	mypts41[2].x = 2400;
+	mypts41[3].x = 2370;
+	mypts41[4].x = 2150;
+	mypts51[0].x = 1422;
+	mypts51[1].x = 1500;
+	mypts51[2].x = 1552;
+	mypts51[3].x = 1525;
+	mypts51[4].x = 1490;
+	mypts61[0].x = 1422;
+	mypts61[1].x = 1500;
+	mypts61[2].x = 1552;
+	mypts61[3].x = 1525;
+	mypts61[4].x = 1490;
+	mypts61[5].x = 1422;
+	mypts71[0].x = 1545;
+	mypts71[1].x = 1600;
+	mypts71[2].x = 1650;
+	mypts71[3].x = 1630;
+	mypts71[4].x = 1575;
+	mypts71[5].x = 1545;
+	mypts81[0].x = 1342;
+	mypts81[1].x = 1220;
+	mypts81[2].x = 1200;
+	mypts81[3].x = 1188;
+	mypts81[4].x = 1235;
+	mypts81[5].x = 1342;
+}
+int Background::getEnd(){//Gets the end point of the first set of mountains (the point furthest to the right)
+	return Mnt4RX;
+}
