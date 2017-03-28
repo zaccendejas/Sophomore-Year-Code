@@ -1,0 +1,1 @@
+This is a bash shell script that extracts data from zipcodestogo.com in order to display the zip codes for any U.S. City or State. It utilizes a -h flag to display a usage message, a -s flag to specify a State, a -c flag to specify a city, and a -f flag to format the output as either line by line text or in a csv format.
